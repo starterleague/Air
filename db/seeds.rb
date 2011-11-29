@@ -31,7 +31,7 @@ Flight.destroy_all
 
 Airport.all.each do |origin_airport|
   12.times do 
-    other_airport = Airport.all.choice
+    other_airport = Airport.all.sample
     if other_airport != origin_airport
       departing_hour = rand(12)+1
       distance = rand(600)+300

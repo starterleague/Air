@@ -31,16 +31,18 @@ Flight.destroy_all
 
 Airport.all.each do |origin_airport|
   12.times do 
-    other_airport = Airport.all.choice
+    other_airport = Airport.all.sample
     if other_airport != origin_airport
       departing_hour = rand(12)+1
       distance = rand(600)+300
-      Flight.create :number => rand(9999)+1,
+      f = Flight.create :number => rand(9999)+1,
                     :departure_airport => origin_airport,
                     :arrival_airport => other_airport,
                     :departs_at => "#{departing_hour}:#{rand(50)+10} #{departing_hour < 6 ? "pm" : "am" }",
                     :distance => distance,
                     :meal => (distance > 400)
+      puts f.inspect
+      puts
     end
   end
 end

@@ -1,24 +1,52 @@
-<h1>Flight Schedule</h1>
+<aside>
+  <div class="box">
+    <h1>Flight Search</h1>
+    <%= form_tag flights_url, :method => :get do %>
+      <ul>
+        <li class="text">
+          <%= label_tag :from, "From"%>
+          <%= text_field_tag :from %>
+        </li>
+        <li class="text">
+          <%= label_tag :to, "To"%>
+          <%= text_field_tag :to %>
+        </li>
+      
+        <li class="check">
+          <strong>Stops</strong>
+          <%= check_box_tag :nonstop %><%= label_tag :nonstop, "Nonstop" %>
+          <%= check_box_tag :onestop %><%= label_tag :onestop, "1 Stop" %>
+          <%= check_box_tag :plusstop %><%= label_tag :plusstop, "2+ Stops", :class  => "last" %>
+        </li>
+        <li class="check">
+          <strong>Meal Service</strong>
+          <%= check_box_tag :meal %><%= label_tag :meal, "Yes" %>
+          <%= check_box_tag :nomeal %><%= label_tag :nomeal, "No" %>
+        </li>
+        <li class="submit">
+          <%= submit_tag "Search" %>
+        </li>
+        <li class="hint">
+          (<%= link_to "View All Available Airports", airports_url %>)
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</aside>
 
-<p><%= link_to "See the Airports You Can Fly To", airports_url %></p>
+<section>
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Time</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Distance</th>
+      <th>Meal Service</th>
+      <th></th>
+    </tr>
+    <%= render @flights %>
+  </table>
+</section>
 
-<%= form_tag flights_url, :method => :get do %>
-<%= check_box_tag :meal %><%= label_tag :meal, "Meals Only" %>
-<%= submit_tag "Search" %>
-<% end %>
-
-<table>
-  <tr>
-    <th/>
-    <th>Number</th>
-    <th>Departs at</th>
-    <th>From</th>
-    <th>To</th>
-    <th>Miles</th>
-    <th>Meal Service</th>
-  </tr>
-
-<%= render @flights %>
-
-</table>
-
+<div class="clear"></div>

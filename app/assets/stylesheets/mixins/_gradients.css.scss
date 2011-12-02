@@ -1,0 +1,39 @@
+@mixin gradient-gray {
+  background: darken(#fff, 5%);
+  background: -moz-linear-gradient(top, #fff, darken(#fff, 10%));
+  background: -ms-linear-gradient(top, #fff, darken(#fff, 10%));
+  background: -o-linear-gradient(top, #fff, darken(#fff, 10%));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(darken(#fff, 10%)));
+  background: -webkit-linear-gradient(top, #fff, darken(#fff, 10%));
+  background: linear-gradient(top, #fff, darken(#fff, 10%));
+}
+
+@mixin gradient-gray-hover {
+  background: darken(#fff, 8%);
+  background: -moz-linear-gradient(top, darken(#fff, 4%), darken(#fff, 12%));
+  background: -ms-linear-gradient(top, darken(#fff, 4%), darken(#fff, 12%));
+  background: -o-linear-gradient(top, darken(#fff, 4%), darken(#fff, 12%));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(darken(#fff, 4%)), to(darken(#fff, 12%)));
+  background: -webkit-linear-gradient(top, darken(#fff, 4%), darken(#fff, 12%));
+  background: linear-gradient(top, darken(#fff, 4%), darken(#fff, 12%));
+}
+
+@mixin gradient-red {
+  background: darken(#e72b32, 10%);
+  background: -moz-linear-gradient(top, #e72b32, darken(#e72b32, 20%));
+  background: -ms-linear-gradient(top, #e72b32, darken(#e72b32, 20%));
+  background: -o-linear-gradient(top, #e72b32, darken(#e72b32, 20%));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e72b32), to(darken(#e72b32, 20%)));
+  background: -webkit-linear-gradient(top, #e72b32, darken(#e72b32, 20%));
+  background: linear-gradient(top, #e72b32, darken(#e72b32, 20%));
+}
+
+@mixin gradient-row {
+  background: #fff;
+  background: -moz-linear-gradient(bottom, #fff 0%, darken(#fff, 5%) 120%);
+  background: -ms-linear-gradient(bottom, #fff 0%, darken(#fff, 5%) 120%);
+  background: -o-linear-gradient(bottom, #fff 0%, darken(#fff, 5%) 120%);
+  background: -webkit-gradient(linear, 0% 0%, 0% 120%, from(#fff), to(darken(#fff, 5%)));
+  background: -webkit-linear-gradient(bottom, #fff 0%, darken(#fff, 5%) 120%);
+  background: linear-gradient(bottom, #fff 0%, darken(#fff, 5%) 120%);
+}

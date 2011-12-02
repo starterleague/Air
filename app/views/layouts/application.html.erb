@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Air</title>
+  <title>AcademyAir</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div id="header">
-  <h1><%= link_to "Academy Air", root_url %></h1>
-  <% if logged_in? %>
-    <h2>Hello, <%= current_user.first_name %> <%= current_user.last_name %>!</h2>
-    <p><%= link_to "Sign Out", sessions_destroy_url, :method => :delete %>
-      | <%= link_to "My Account", user_url(current_user) %></p>
-  <% else %>
-    <p><%= link_to "Sign in", login_page_url %> | <%= link_to "Sign Up", new_user_url %></p>
-  <% end %>
-</div>
-<% if flash[:notice] %>
-  <p id="notice"><%= flash[:notice] %></p>
-<% end %>
-
-<%= yield %>
-
+  <div id="container">
+    
+    <header>
+      <h1><%= link_to root_url do %>Academy<span>Air</span><% end %></h1>
+      <% if logged_in? %>
+        <ul>
+          <li><%= link_to "Sign Out", sessions_destroy_url, :method => :delete %></li>
+          <li class="btn"><%= link_to "My Account", user_url(current_user) %></li>
+        </ul>
+        <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %>!</p>
+      <% else %>
+        <ul>
+          <li><%= link_to "Sign In", login_page_url %></li>
+          <li class="btn"><%= link_to "Sign Up", new_user_url %></li>
+        </ul>
+      <% end %>
+      <div class="clear"></div>
+    </header>
+    
+    <nav>
+      <ul>
+        <li><a href="#" title="Reservations">Reservations</a></li>
+        <li><a href="#" title="Deals and Specials">Deals &amp; Specials</a></li>
+        <li><a href="#" title="Rewards">Rewards</a></li>
+        <li><a href="#" title="Travel Information">Travel Information</a></li>
+        <li><a href="#" title="About Us">About Us</a></li>
+        <li><a href="#" title="Contact Us">Contact Us</a></li>
+      </ul>
+    </nav>
+    
+    <% if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    <% end %>
+    
+    <%= yield %>
+    
+  </div>
+  
 </body>
 </html>

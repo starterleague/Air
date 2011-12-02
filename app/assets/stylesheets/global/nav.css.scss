@@ -1,0 +1,17 @@
+/*** NAVIGATION ***/
+
+nav {
+  @include gradient-gray;
+  border-bottom: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+  height: 36px;
+  ul {
+    li {
+      float: left;
+      font-size: $font-size + 1px;
+      font-weight: 700;
+      line-height: 36px;
+      margin: 0 20px;
+    }
+  }
+}

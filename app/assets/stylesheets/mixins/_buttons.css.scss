@@ -1,0 +1,25 @@
+@mixin btn-gray {
+  @include gradient-gray;
+  border: 1px solid $border-color;
+  @include border-radius;
+  color: $blue;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    @include gradient-gray-hover;
+    color: $red;
+  }
+}
+
+@mixin btn-book {
+  @include gradient-gray;
+  border: 1px solid $border-color;
+  @include border-radius;
+  color: $red;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    @include gradient-red;
+    border: 1px solid darken(#e72b32, 25%);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+  }
+}

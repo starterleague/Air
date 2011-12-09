@@ -1,0 +1,116 @@
+@media screen and (max-width: 640px) {
+  
+  /*** GLOBAL ***/
+  
+  html {
+    background: #fff;
+    padding: 0 0 20px 0;
+  }
+  
+  #container {
+    @include box-shadow(none);
+    margin: 0;
+    width: auto;
+  }
+  
+  /*** HEADER ***/
+  
+  header {
+    border-bottom: 1px solid $border-color;
+    padding: 20px 10px;
+    ul {
+      margin: 22px 0 0 0;
+      li {
+        line-height: 12px;
+        &.btn {
+          border-left: 1px solid $border-color;
+          margin: 0 0 0 8px;
+          padding: 0 0 0 8px;
+          a {
+            background: none;
+            border: none;
+            padding: 0;
+            &:hover, &:focus, &:active {
+              background: none;
+            }
+          }
+        }
+      }
+    }
+    p {
+      display: none;
+    }
+  }
+  
+  /*** NAV ***/
+  
+  nav {
+    display: none;
+  }
+  
+  /*** ASIDE ***/
+  
+  aside {
+    margin: 0;
+    width: 100%;
+    .box {
+      border: none;
+      @include border-radius(0);
+    }
+    h1 {
+      @include border-radius(0);
+      padding: 8px;
+      width: 102%;
+    }
+  }
+  
+  /*** SECTION ***/
+  
+  section {
+    @include border-radius(0);
+    border-left: none;
+    border-right: none;
+    margin: 0;
+    width: 100%;
+    table {
+      tr {
+        th {
+          padding: 8px 4px;
+          &:nth-child(5), &:nth-child(6) {
+            display: none;
+          }
+        }
+        td {
+          padding: 8px 6px;
+          &.book a {
+            padding: 2px 6px;
+          }
+          &:nth-child(5), &:nth-child(6) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  
+  /*** FORM ***/
+  
+  form {
+    input {
+      padding: 4px 6px;
+      width: 96%;
+    }
+    li.submit input {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
+  /*** ALERTS ***/
+  
+  #notice {
+    border-bottom: 1px solid $border-color;
+    padding: 12px 10px;
+  }
+  
+}
